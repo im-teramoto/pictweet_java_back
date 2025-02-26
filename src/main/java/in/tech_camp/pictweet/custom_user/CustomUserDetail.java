@@ -19,11 +19,11 @@ public class CustomUserDetail implements UserDetails {
     }
 
     public Integer getId() {
-      return user.getId();
+      return user.getUserid();
     }
 
     public String getNickname() {
-      return user.getNickname();
+      return user.getUsername();
     }
 
     @Override

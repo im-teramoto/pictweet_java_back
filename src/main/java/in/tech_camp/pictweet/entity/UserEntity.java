@@ -6,10 +6,8 @@ import lombok.Data;
 
 @Data
 public class UserEntity {
-  private Integer id;
-  private String nickname;
+  private Integer userid;
+  private String username;
   private String email;
   private String password;
-  private List<TweetEntity> tweets;
-  private List<CommentEntity> comments;
 }

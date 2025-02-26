@@ -14,8 +14,8 @@ import in.tech_camp.pictweet.entity.UserEntity;
 
 @Mapper
 public interface UserRepository {
-  @Insert("INSERT INTO users (nickname, email, password) VALUES (#{nickname}, #{email}, #{password})")
-  @Options(useGeneratedKeys = true, keyProperty = "id")
+  @Insert("INSERT INTO users (username, email, password) VALUES (#{username}, #{email}, #{password})")
+  @Options(useGeneratedKeys = true, keyProperty = "userid")
   void insert(UserEntity user);
 
   @Select("SELECT EXISTS(SELECT 1 FROM users WHERE email = #{email})")
@@ -24,7 +24,7 @@ public interface UserRepository {
   @Select("SELECT * FROM users WHERE email = #{email}")
   UserEntity findByEmail(String email);
 
-  @Select("SELECT * FROM users WHERE id = #{id}")
+  @Select("SELECT * FROM users WHERE userid = #{id}")
   @Results(value = {
     @Result(property = "id", column = "id"),
     @Result(property = "tweets", column = "id", 

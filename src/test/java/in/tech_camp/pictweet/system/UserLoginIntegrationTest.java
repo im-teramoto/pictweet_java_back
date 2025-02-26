@@ -42,7 +42,7 @@ public class UserLoginIntegrationTest {
     userForm = UserFormFactory.createUser();
     UserEntity userEntity = new UserEntity();
     userEntity.setEmail(userForm.getEmail());
-    userEntity.setNickname(userForm.getNickname());
+    userEntity.setUsername(userForm.getUsername());
     userEntity.setPassword(userForm.getPassword());
 
     userService.createUserWithEncryptedPassword(userEntity);

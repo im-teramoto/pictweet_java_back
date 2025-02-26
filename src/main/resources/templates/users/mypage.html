@@ -10,7 +10,7 @@
 <div th:insert="~{header :: header}"></div>
 
 <div class="contents row">
-  <p th:text="${nickname} + 'さんの投稿一覧'"></p>
+  <p th:text="${username} + 'さんの投稿一覧'"></p>
 
   <div th:each="tweet : ${tweets}">
     <div th:replace="~{tweets/tweet :: content(tweet=${tweet})}"></div>

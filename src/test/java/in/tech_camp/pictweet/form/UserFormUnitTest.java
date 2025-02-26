@@ -35,7 +35,7 @@ public class UserFormUnitTest {
     @Nested
     class ユーザー作成ができる場合 {
         @Test
-        public void nicknameとemailとpasswordとpassword_confirmationが存在すれば登録できる () {
+        public void usernameとemailとpasswordとpassword_confirmationが存在すれば登録できる () {
             Set<ConstraintViolation<UserForm>> violations = validator.validate(userForm, ValidationPriority1.class);
             assertEquals(0, violations.size());
         }
@@ -44,11 +44,11 @@ public class UserFormUnitTest {
     @Nested
     class ユーザー作成ができない場合 {
         @Test
-        public void nicknameが空では登録できない () {
-            userForm.setNickname("");
+        public void usernameが空では登録できない () {
+            userForm.setUsername("");
             Set<ConstraintViolation<UserForm>> violations = validator.validate(userForm, ValidationPriority1.class);
             assertEquals(1, violations.size());
-            assertEquals("Nickname can't be blank", violations.iterator().next().getMessage());
+            assertEquals("username can't be blank", violations.iterator().next().getMessage());
         }
 
         @Test
@@ -78,7 +78,7 @@ public class UserFormUnitTest {
 
         @Test
         public void nicknameが7文字以上では登録できない() {
-            userForm.setNickname("TooLong");
+            userForm.setUsername("TooLong");
             Set<ConstraintViolation<UserForm>> violations = validator.validate(userForm, ValidationPriority2.class);
             assertEquals(1, violations.size());
             assertEquals("Nickname is too long (maximum is 6 characters)", violations.iterator().next().getMessage());

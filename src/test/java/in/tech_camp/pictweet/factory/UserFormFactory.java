@@ -16,7 +16,7 @@ public class UserFormFactory {
     if (generatedUsername.length() > 6) {
         generatedUsername = generatedUsername.substring(0, 6);
     }
-    userForm.setNickname(generatedUsername);
+    userForm.setUsername(generatedUsername);
     userForm.setPassword(faker.internet().password(6, 12));
     userForm.setPasswordConfirmation(userForm.getPassword());
     return userForm;

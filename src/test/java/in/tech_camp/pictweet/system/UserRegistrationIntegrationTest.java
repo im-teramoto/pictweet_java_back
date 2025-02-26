@@ -61,7 +61,7 @@ public class UserRegistrationIntegrationTest {
 
                 mockMvc.perform(post("/user")
                         .contentType(MediaType.APPLICATION_FORM_URLENCODED)
-                        .param("nickname", userForm.getNickname())
+                        .param("username", userForm.getUsername())
                         .param("email", userForm.getEmail())
                         .param("password", userForm.getPassword())
                         .param("passwordConfirmation", userForm.getPasswordConfirmation())
@@ -92,7 +92,7 @@ public class UserRegistrationIntegrationTest {
 
                 mockMvc.perform(post("/user")
                         .contentType(MediaType.APPLICATION_FORM_URLENCODED)
-                        .param("nickname", "")
+                        .param("username", "")
                         .param("email", userForm.getEmail())
                         .param("password", userForm.getPassword())
                         .param("passwordConfirmation", userForm.getPasswordConfirmation())
